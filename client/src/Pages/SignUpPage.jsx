@@ -11,7 +11,6 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast"
 import { Link, useNavigate } from "react-router-dom";
 import Preloader from "../Components/Preloader";
-import GoogleLogin from "../Components/GoogleLogin";
 
 
 const SignUpPage = () => {
@@ -28,7 +27,7 @@ const SignUpPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (password !== confirmPassword) {
+        if (password !== confirmPassword){
             setError("Passwords do not match!");
             return; //Prevent form submission if passwords don't match
         }
@@ -161,10 +160,6 @@ const SignUpPage = () => {
                                 >
                                     Register
                                 </button>
-
-                                {/* Google Login Button */}
-                                <GoogleLogin />
-
                                 <div className='w-full flex items-center justify-center mt-3 mb-3'>
                                     <p className='text-sm text-[#060606] dark:text-white'>
                                         Already have an account?{' '} <Link to="/login">Login</Link>
